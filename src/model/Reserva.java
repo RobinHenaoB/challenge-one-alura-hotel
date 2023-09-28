@@ -1,17 +1,20 @@
 package model;
 
+import java.sql.Date;
+
 public class Reserva {
 	private Integer id;
 
-	private String FechaEntrada;
+	private Date FechaEntrada;
 
-	private String fechaSalida;
+	private Date fechaSalida;
 
 	private String valor;
 
 	private String FormaPago;
 	
-	public Reserva(String fechaEntrada, String fechaSalida, String valor, String formaPago) {
+	
+	public Reserva(Date fechaEntrada, Date fechaSalida, String valor, String formaPago) {
 		super();
 		FechaEntrada = fechaEntrada;
 		this.fechaSalida = fechaSalida;
@@ -19,7 +22,7 @@ public class Reserva {
 		FormaPago = formaPago;
 	}
 
-	public Reserva(Integer id, String fechaEntrada, String fechaSalida, String valor, String formaPago) {
+	public Reserva(Integer id, Date fechaEntrada, Date fechaSalida, String valor, String formaPago) {
 		super();
 		this.id = id;
 		FechaEntrada = fechaEntrada;
@@ -32,42 +35,62 @@ public class Reserva {
 		return id;
 	}
 
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getFechaEntrada() {
+
+
+	public Date getFechaEntrada() {
 		return FechaEntrada;
 	}
 
-	public void setFechaEntrada(String fechaEntrada) {
+
+
+	public void setFechaEntrada(Date fechaEntrada) {
 		FechaEntrada = fechaEntrada;
 	}
 
-	public String getFechaSalida() {
+
+
+	public Date getFechaSalida() {
 		return fechaSalida;
 	}
 
-	public void setFechaSalida(String fechaSalida) {
+
+
+	public void setFechaSalida(Date fechaSalida) {
 		this.fechaSalida = fechaSalida;
 	}
+
+
 
 	public String getValor() {
 		return valor;
 	}
 
+
+
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
+
+
 
 	public String getFormaPago() {
 		return FormaPago;
 	}
 
+
+
 	public void setFormaPago(String formaPago) {
 		FormaPago = formaPago;
 	}
-	
+
+
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

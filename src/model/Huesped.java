@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.Date;
+
 public class Huesped {
 	
 	private Integer id;
@@ -8,16 +10,19 @@ public class Huesped {
 
 	private String apellido;
 
-	private String nacimiento;
+	private Date nacimiento;
 
 	private String nacionalidad;
 
 	private String telefono;
 
-	private Long reservaId;
+	private int reservaId;
 
-	public Huesped(String nombre, String apellido, String nacimiento, String nacionalidad, String telefono,
-			Long reservaId) {
+	
+
+
+	public Huesped(String nombre, String apellido, Date nacimiento, String nacionalidad, String telefono,
+			int reservaId) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -27,8 +32,11 @@ public class Huesped {
 		this.reservaId = reservaId;
 	}
 
-	public Huesped(Integer id, String nombre, String apellido, String nacimiento, String nacionalidad,
-			String telefono, Long reservaId) {
+
+
+
+	public Huesped(Integer id, String nombre, String apellido, Date nacimiento, String nacionalidad, String telefono,
+			int reservaId) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -38,63 +46,108 @@ public class Huesped {
 		this.telefono = telefono;
 		this.reservaId = reservaId;
 	}
+
+
+
 
 	public Integer getId() {
 		return id;
 	}
 
+
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
+
 
 	public String getNombre() {
 		return nombre;
 	}
 
+
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+
+
 
 	public String getApellido() {
 		return apellido;
 	}
 
+
+
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
 
-	public String getNacimiento() {
+
+
+
+	public Date getNacimiento() {
 		return nacimiento;
 	}
 
-	public void setNacimiento(String nacimiento) {
+
+
+
+	public void setNacimiento(Date nacimiento) {
 		this.nacimiento = nacimiento;
 	}
+
+
+
 
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
 
+
+
+
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
+
+
+
 
 	public String getTelefono() {
 		return telefono;
 	}
 
+
+
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-	public Long getReservaId() {
+
+
+
+	public int getReservaId() {
 		return reservaId;
 	}
 
-	public void setReservaId(Long reservaId) {
+
+
+
+	public void setReservaId(int reservaId) {
 		this.reservaId = reservaId;
 	}
-	
+
+
+
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
