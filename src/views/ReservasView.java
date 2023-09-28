@@ -331,7 +331,7 @@ public class ReservasView extends JFrame {
 		String fechaE = ((JTextField)txtFechaEntrada.getDateEditor().getUiComponent()).getText();
 		String fechaS = ((JTextField)txtFechaSalida.getDateEditor().getUiComponent()).getText();
 		Reserva nuevaReserva = new Reserva(java.sql.Date.valueOf(fechaE), java.sql.Date.valueOf(fechaS),txtValor.getText(),txtFormaPago.getSelectedItem().toString());
-		reservaController.registrarReserva(nuevaReserva);
+		reservaController.registerReserva(nuevaReserva);
 		JOptionPane.showMessageDialog(null,"Registro Guardado con éxito " + nuevaReserva.getId());
 		return nuevaReserva.getId();
 	}

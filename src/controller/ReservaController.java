@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
@@ -12,27 +13,27 @@ public class ReservaController {
 	private ReservaDAO reservaDao;
 
 	public ReservaController() {
-		var factory = new ConnectionFactory();
-		this.reservaDao = new ReservaDAO(factory.recuperaConexion());
+		Connection con = new ConnectionFactory().recuperaConexion();
+		this.reservaDao = new ReservaDAO(con);
 	}
 	
-	public void registrarReserva(Reserva reserva) {
+	public void registerReserva(Reserva reserva) {
 		reservaDao.saveReserva(reserva);
 	}
 	
-	public List<Reserva> buscar() {
-		return this.reservaDao.listReserva();
+	public List<Reserva> listReservas() {
+		return this.reservaDao.listReservas();
 	}
 	
-	public List<Reserva> buscarId(String id) {
+	public List<Reserva> searchIdReserva(String id) {
 		return this.reservaDao.searchIdReserva(id);
 	}
 	
-	public void actualizar(Date fechaEntrada, Date fechaSalida, String valor, String formaPago, Integer id) {
+	public void updateReserva(Date fechaEntrada, Date fechaSalida, String valor, String formaPago, Integer id) {
 		this.reservaDao.updateReserva(fechaEntrada, fechaSalida, valor, formaPago, id);
 	}
 	
-	public void Eliminar(Integer id) {
+	public void deleteReserva(Integer id) {
 		this.reservaDao.deleteReserva(id);
 	}
 	

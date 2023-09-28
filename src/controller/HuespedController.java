@@ -17,23 +17,23 @@ public class HuespedController {
 	}
 	
 	
-	public void registrarHuesped(Huesped huesped) {
+	public void registerHuesped(Huesped huesped) {
 		huespedDao.saveHuesped(huesped);
 	}
 	
-	public List<Huesped> listarHuespedes() {
+	public List<Huesped> listHuespedes() {
 		return this.huespedDao.listHuespedes();
 	}
 	
-	public List<Huesped> listarHuespedesId(String id) {
+	public List<Huesped> searchIdHuesped(String id) {
 		return this.huespedDao.searchIdHuesped(id);
 	}
 	
-	public void actualizar(String nombre, String apellido, Date fechaNacimineto, String nacionalidad, String telefono, Integer reservaId, Integer id) {
+	public void updateHuesped(String nombre, String apellido, Date fechaNacimineto, String nacionalidad, String telefono, Integer reservaId, Integer id) {
 		this.huespedDao.updateHuesped(nombre, apellido, fechaNacimineto, nacionalidad, telefono, reservaId, id);
 	}
 	
-	public void Eliminar(Integer id) {
+	public void deleteHuesped(Integer id) {
 		this.huespedDao.deleteHuesped(id);
 	}
 }

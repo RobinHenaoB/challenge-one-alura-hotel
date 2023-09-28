@@ -334,7 +334,7 @@ public class RegistroHuesped extends JFrame {
 			String fechaN = ((JTextField)txtFechaN.getDateEditor().getUiComponent()).getText();	
 			int nreserva = Integer.parseInt(txtNreserva.getText());
 			Huesped huespedes = new Huesped(txtNombre.getText(), txtApellido.getText(),  java.sql.Date.valueOf(fechaN), txtNacionalidad.getSelectedItem().toString(),txtTelefono.getText(), nreserva);
-			this.huespedController.registrarHuesped(huespedes);
+			this.huespedController.registerHuesped(huespedes);
 			Exito exito = new Exito();
 			exito.setVisible(true);	
 			dispose();

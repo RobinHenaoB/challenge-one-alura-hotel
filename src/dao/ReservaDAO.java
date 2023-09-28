@@ -46,17 +46,17 @@ public class ReservaDAO {
 
 	}
 	
-	public List<Reserva> listReserva() {
-		List<Reserva> reserva = new ArrayList<Reserva>();
+	public List<Reserva> listReservas() {
+		
+		List<Reserva> reservas = new ArrayList<Reserva>();
 		try {
 			String sql = "SELECT id, fecha_entrada, fecha_salida, valor, forma_pago FROM reservas";
 
 			try (PreparedStatement pstm = con.prepareStatement(sql)) {
 				pstm.execute();
-
-				changeResultSetReserva(reserva, pstm);
+				reservas=changeResultSetReserva(pstm);
 			}
-			return reserva;
+			return reservas;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -71,8 +71,7 @@ public class ReservaDAO {
 			try (PreparedStatement pstm = con.prepareStatement(sql)) {
 				pstm.setString(1, id);
 				pstm.execute();
-
-				changeResultSetReserva(reserva, pstm);
+				reserva=changeResultSetReserva(pstm);
 			}
 			return reserva;
 		} catch (SQLException e) {
@@ -103,14 +102,17 @@ public class ReservaDAO {
 		}
 	}
 						
-	private void changeResultSetReserva(List<Reserva> reservas, PreparedStatement pstm) throws SQLException {
+	private List<Reserva> changeResultSetReserva( PreparedStatement pstm) throws SQLException {
+		List<Reserva> reservas = new ArrayList<Reserva>() ;
 		try (ResultSet rst = pstm.getResultSet()) {
 			while (rst.next()) {
 				Reserva produto = new Reserva(rst.getInt(1), rst.getDate(2), rst.getDate(3), rst.getString(4), rst.getString(5));
 
 				reservas.add(produto);
 			}
+			
 		}
+		return reservas;
 	}
 
 }
